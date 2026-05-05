@@ -1,0 +1,237 @@
+.container {
+  min-height: 100vh;
+}
+
+/* ── Red Band ── */
+.band {
+  background: var(--accent);
+  color: #fff;
+  padding: 18px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.bandInner {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.band span {
+  display: inline-block;
+  padding-right: 36px;
+}
+
+/* ── Shared Section ── */
+.section {
+  padding: 18px 0 74px;
+}
+
+.wrap {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.sectionHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.sectionTitle {
+  font-size: clamp(36px, 6vw, 54px);
+  font-weight: 900;
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+  margin-bottom: 0;
+}
+
+.sectionSub {
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ── Panels / Cards ── */
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 26px;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.panel:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.panel h3 {
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.panel p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ── Truth Section ── */
+.truth {
+  background: #050505;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 54px 0;
+}
+
+.truthBox {
+  max-width: 900px;
+}
+
+.truthQuote {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 900;
+  line-height: 0.95;
+  margin-bottom: 12px;
+  letter-spacing: -0.03em;
+}
+
+.truthSub {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* ── Process Steps ── */
+.process {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stepNo {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(211, 13, 20, 0.1);
+  color: var(--accent);
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+/* ── Quote Card ── */
+.quoteCard {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 28px;
+  padding: 40px;
+  box-shadow: 0 18px 44px rgba(211, 13, 20, 0.16);
+}
+
+.quoteText {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 900;
+  line-height: 1.02;
+  margin-bottom: 18px;
+}
+
+.quoteAttr {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.82;
+}
+
+/* ── CTA ── */
+.ctaSection {
+  padding: 0 0 78px;
+}
+
+.ctaBox {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 36px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+}
+
+.ctaBox p {
+  color: var(--muted);
+  max-width: 640px;
+}
+
+.btnCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 14px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 12px 26px rgba(211, 13, 20, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.btnCta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(211, 13, 20, 0.3);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1000px) {
+  .ctaBox {
+    grid-template-columns: 1fr;
+  }
+  .grid3, .process {
+    grid-template-columns: 1fr 1fr;
+  }
+  .sectionHead {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .sectionTitle {
+    font-size: 40px;
+  }
+  .grid3, .process {
+    grid-template-columns: 1fr;
+  }
+  .ctaBox {
+    padding: 26px;
+  }
+  .truthQuote {
+    font-size: 32px;
+  }
+}

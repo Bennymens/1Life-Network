@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1Life Network — Artist Submissions</title>
+  <meta name="description" content="Submit to 1Life Global Class. A selective annual filter for global-ready African artists." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#050505; --bg2:#0b0b0b; --panel:#101010; --text:#fff;
+      --soft:rgba(255,255,255,.72); --line:rgba(255,255,255,.1);
+      --line2:rgba(255,255,255,.16); --red:#a11212; --red2:rgba(161,18,18,.34);
+      --max:1200px; --radius:24px; --shadow:0 28px 70px rgba(0,0,0,.42);
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{
+      margin:0; font-family:'Inter',system-ui,sans-serif; color:var(--text); line-height:1.55;
+      background:radial-gradient(circle at top, rgba(161,18,18,.08), transparent 22%), linear-gradient(180deg,#080808 0%, #050505 100%);
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(var(--max),calc(100% - 32px));margin:0 auto}
+    .section{padding:100px 0}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--soft)}
+    .eyebrow:before{content:'';display:block;width:36px;height:1px;background:var(--red2)}
+    .section-head{max-width:780px;margin-bottom:34px}
+    .section-head h1,.section-head h2{margin:12px 0 16px;font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,5.8rem);line-height:.9;font-weight:600;letter-spacing:-.05em}
+    .section-head h2{font-size:clamp(2.2rem,5vw,4rem);line-height:.98}
+    .section-head p{margin:0;color:var(--soft);max-width:720px;font-size:1rem}
+    header{position:sticky;top:0;z-index:20;background:rgba(5,5,5,.8);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav-wrap{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .dot{width:11px;height:11px;border-radius:50%;background:var(--red);box-shadow:0 0 18px rgba(161,18,18,.34)}
+    .brand-copy strong{display:block;font-size:14px;letter-spacing:.18em;text-transform:uppercase}
+    .brand-copy span{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-top:3px}
+    nav{display:flex;gap:24px;align-items:center}
+    nav a{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 22px;border-radius:999px;text-transform:uppercase;font-size:12px;letter-spacing:.16em;transition:.22s ease}
+    .btn-primary{background:var(--red);border:1px solid var(--red);color:#fff;font-weight:700;box-shadow:0 8px 28px rgba(161,18,18,.22)}
+    .btn-secondary{border:1px solid var(--line2);background:rgba(255,255,255,.02)}
+    .hero{padding:84px 0 64px}
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:34px;align-items:start}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:28px;box-shadow:0 14px 30px rgba(0,0,0,.15)}
+    .card h3{margin:0 0 14px;font-size:1.2rem}
+    .card p,.card li,.meta span,.step p,.note p,label small,.fine{color:var(--soft)}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+    .stat{padding:20px;border:1px solid rgba(255,255,255,.08);border-radius:20px;background:rgba(255,255,255,.02)}
+    .stat strong{display:block;font-family:'Cormorant Garamond',serif;font-size:2.2rem;line-height:.9;margin-bottom:8px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .requirements{display:grid;gap:16px}
+    .requirements .item{padding:18px 20px;border-radius:18px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08)}
+    .requirements .item strong{display:block;margin-bottom:8px;text-transform:uppercase;font-size:12px;letter-spacing:.14em}
+    .steps{display:grid;gap:16px}
+    .step{display:grid;grid-template-columns:54px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+    .step:last-child{border-bottom:0;padding-bottom:0}
+    .num{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:rgba(161,18,18,.16);border:1px solid var(--red2);font-weight:700}
+    .step h4{margin:0 0 6px;font-size:1rem}
+    form{display:grid;gap:18px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    label{display:grid;gap:8px;font-size:13px;letter-spacing:.04em}
+    input, select, textarea{
+      width:100%; min-height:56px; border-radius:16px; border:1px solid rgba(255,255,255,.1);
+      background:#0d0d0d; color:#fff; padding:16px 18px; font:inherit; outline:none;
+    }
+    textarea{min-height:150px;resize:vertical}
+    input:focus, select:focus, textarea:focus{border-color:var(--red2); box-shadow:0 0 0 3px rgba(161,18,18,.10)}
+    .check{display:flex;align-items:flex-start;gap:12px;padding:4px 0}
+    .check input{width:18px;height:18px;min-height:auto;margin-top:2px}
+    .meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
+    .meta .pill{padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);font-size:11px;letter-spacing:.15em;text-transform:uppercase}
+    .note{padding:20px;border-left:1px solid var(--red2);background:rgba(255,255,255,.02);border-radius:0 16px 16px 0}
+    footer{padding:28px 0 56px;color:var(--soft);font-size:14px}
+    .footer-wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.06);padding-top:26px}
+    code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:rgba(255,255,255,.04);padding:2px 6px;border-radius:6px}
+    @media (max-width:980px){.hero-grid,.grid,.row,.stats{grid-template-columns:1fr}}
+    @media (max-width:760px){nav{display:none}.section{padding:78px 0}.section-head h1{font-size:clamp(2.8rem,16vw,4.8rem)}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-wrap">
+      <a href="#top" class="brand">
+        <span class="dot"></span>
+        <span class="brand-copy">
+          <strong>1Life Network</strong>
+          <span>Submissions — Global Class</span>
+        </span>
+      </a>
+      <nav>
+        <a href="#why">Why Apply</a>
+        <a href="#criteria">Criteria</a>
+        <a href="#process">Process</a>
+        <a href="#apply">Apply</a>
+      </nav>
+      <a class="btn btn-secondary" href="#apply">Apply now</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="section-head">
+            <span class="eyebrow">1Life Global Class</span>
+            <h1>Selected. Tested. Presented.</h1>
+            <p>
+              This is not open exposure. This is a selective annual filter for artists who can already perform, already carry identity, and are ready to be presented at a global standard.
+            </p>
+          </div>
+
+          <div class="meta">
+            <span class="pill">Live performance mandatory</span>
+            <span class="pill">Only 5–8 artists selected</span>
+            <span class="pill">No lip-syncing</span>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>5–8</strong>
+              <span>artists selected annually</span>
+            </div>
+            <div class="stat">
+              <strong>1</strong>
+              <span>signature 1Life Session</span>
+            </div>
+            <div class="stat">
+              <strong>10+</strong>
+              <span>content assets per artist</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>What selected artists receive</h3>
+          <ul>
+            <li>Signature 1Life Session production</li>
+            <li>Professional audio and visual output</li>
+            <li>Short-form content ecosystem</li>
+            <li>PR and media positioning</li>
+            <li>Brand, image, and stage refinement</li>
+          </ul>
+          <div class="note" style="margin-top:22px;">
+            <p><strong style="color:#fff;">Important:</strong> Exposure without readiness is noise. If you are selected, the expectation is discipline, professionalism, and performance under pressure.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="section">
+      <div class="container grid">
+        <div class="card">
+          <div class="section-head" style="margin-bottom:18px;">
+            <span class="eyebrow">Why apply</span>
+            <h2 style="font-size:clamp(2rem,4vw,3.4rem);">Because being seen is not enough.</h2>
+            <p>1Life is built to test whether your talent can stand without noise, excuses, or distraction.</p>
+          </div>
+          <ul>
+            <li>Your performance gets presented in a controlled environment.</li>
+            <li>Your output is shaped for serious audience and industry attention.</li>
+            <li>Your name becomes attached to a selective system, not random visibility.</li>
+          </ul>
+        </div>
+
+        <div id="criteria" class="card">
+          <div class="section-head" style="margin-bottom:18px;">
+            <span class="eyebrow">Selection criteria</span>
+            <h2 style="font-size:clamp(2rem,4vw,3.4rem);">What we score.</h2>
+          </div>
+          <div class="requirements">
+            <div class="item">
+              <strong>Talent</strong>
+              Vocal ability, musicality, and live performance quality.
+            </div>
+            <div class="item">
+              <strong>Presence</strong>
+              Camera confidence, charisma, and identity.
+            </div>
+            <div class="item">
+              <strong>Originality</strong>
+              Sound, style, and distinctiveness.
+            </div>
+            <div class="item">
+              <strong>Readiness</strong>
+              Professionalism, discipline, and work ethic signals.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Process</span>
+          <h2>How selection works.</h2>
+          <p>The process is strict by design. Rejection is part of the standard.</p>
+        </div>
+        <div class="card">
+          <div class="steps">
+            <div class="step">
+              <div class="num">01</div>
+              <div>
+                <h4>Submit your application</h4>
+                <p>Complete the form below with accurate links, a live performance video, and a short statement on why you should be considered.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">02</div>
+              <div>
+                <h4>Initial screening</h4>
+                <p>Weak live performance, poor quality, no originality, or weak presence leads to immediate rejection.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">03</div>
+              <div>
+                <h4>Shortlist review</h4>
+                <p>Selected entries move into internal review, potential callbacks, and a deeper scoring process.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">04</div>
+              <div>
+                <h4>Final selection</h4>
+                <p>Only a small number of artists are chosen for the class. Not everyone makes it.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="apply" class="section">
+      <div class="container grid">
+        <div class="card">
+          <div class="section-head" style="margin-bottom:18px;">
+            <span class="eyebrow">Application form</span>
+            <h2 style="font-size:clamp(2rem,4vw,3.4rem);">Apply to 1Life Global Class.</h2>
+            <p>This form is backend-ready. Replace the form action with your real endpoint.</p>
+          </div>
+
+          <form method="POST" action="https://formspree.io/f/your-form-id">
+            <input type="hidden" name="_subject" value="1Life Global Class Submission" />
+
+            <div class="row">
+              <label>
+                Full name
+                <input type="text" name="full_name" placeholder="Your full name" required />
+              </label>
+              <label>
+                Stage name
+                <input type="text" name="stage_name" placeholder="Your artist name" required />
+              </label>
+            </div>
+
+            <div class="row">
+              <label>
+                Email address
+                <input type="email" name="email" placeholder="you@example.com" required />
+              </label>
+              <label>
+                Phone / WhatsApp
+                <input type="text" name="phone" placeholder="+233..." required />
+              </label>
+            </div>
+
+            <div class="row">
+              <label>
+                Location
+                <input type="text" name="location" placeholder="City / Country" required />
+              </label>
+              <label>
+                Genre
+                <select name="genre" required>
+                  <option value="">Select genre</option>
+                  <option>Afrobeats</option>
+                  <option>Alternative</option>
+                  <option>R&B</option>
+                  <option>Hip Hop</option>
+                  <option>Gospel</option>
+                  <option>Highlife</option>
+                  <option>Other</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="row">
+              <label>
+                Instagram link
+                <input type="url" name="instagram" placeholder="https://instagram.com/..." />
+              </label>
+              <label>
+                TikTok / YouTube / Streaming link
+                <input type="url" name="music_link" placeholder="https://..." required />
+              </label>
+            </div>
+
+            <label>
+              Live performance video link
+              <input type="url" name="live_video" placeholder="Required live performance URL" required />
+              <small>Mandatory. If you cannot perform live, do not apply.</small>
+            </label>
+
+            <label>
+              Why should you be selected?
+              <textarea name="why_you" placeholder="Be direct. No long story. Why you?" required></textarea>
+            </label>
+
+            <label>
+              What have you already released?
+              <textarea name="releases" placeholder="List songs, projects, notable performances, or collaborations."></textarea>
+            </label>
+
+            <label>
+              Management status
+              <select name="management_status" required>
+                <option value="">Select one</option>
+                <option>Independent</option>
+                <option>Managed</option>
+                <option>Signed</option>
+              </select>
+            </label>
+
+            <label class="check">
+              <input type="checkbox" name="consent_truth" required />
+              <span>I confirm that the information submitted is accurate and that I have the right to share all links and material included in this application.</span>
+            </label>
+
+            <label class="check">
+              <input type="checkbox" name="consent_contact" required />
+              <span>I agree to be contacted by 1Life Network regarding this application.</span>
+            </label>
+
+            <button class="btn btn-primary" type="submit">Submit application</button>
+            <p class="fine">Backend options: Formspree, Netlify Forms, Tally embed, Google Forms redirect, or a custom API endpoint.</p>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>Backend notes</h3>
+          <ul>
+            <li><strong style="color:#fff;">Formspree:</strong> Replace <code>your-form-id</code> in the form action with your real Formspree ID.</li>
+            <li><strong style="color:#fff;">Netlify Forms:</strong> Add <code>netlify</code> to the form tag and host on Netlify.</li>
+            <li><strong style="color:#fff;">Custom backend:</strong> Swap the form action for your API route and process entries in Airtable, Sheets, or email.</li>
+          </ul>
+
+          <h3 style="margin-top:26px;">Recommended internal handling</h3>
+          <ul>
+            <li>Every entry should go into a scoring sheet.</li>
+            <li>Immediate disqualifiers should be filtered first.</li>
+            <li>Only shortlist candidates should be contacted.</li>
+          </ul>
+
+          <div class="note" style="margin-top:22px;">
+            <p><strong style="color:#fff;">Best move:</strong> Use Formspree or Tally first. It is faster, cleaner, and enough for early-stage volume.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <span>1Life Network — Global Class Submission System</span>
+      <span>Black / White / Red. Selected. Tested. Presented.</span>
+    </div>
+  </footer>
+</body>
+</html>
