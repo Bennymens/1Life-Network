@@ -2,27 +2,43 @@
   min-height: 100vh;
 }
 
-/* ── Red Band ── */
+/* ── Scrolling Band ── */
 .band {
-  background: var(--accent);
-  color: #fff;
-  padding: 18px 0;
+  background: transparent;
+  padding: 40px 0;
   overflow: hidden;
   white-space: nowrap;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  display: flex;
+  width: 100vw;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .bandInner {
-  width: min(1180px, calc(100% - 32px));
-  margin: 0 auto;
+  display: flex;
+  width: max-content;
+  animation: scrollBand 30s linear infinite;
 }
 
 .band span {
   display: inline-block;
-  padding-right: 36px;
+  padding-right: 60px;
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: #000;
+  -webkit-text-fill-color: #000;
+  -webkit-text-stroke: 1.5px var(--accent);
+}
+
+@keyframes scrollBand {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* ── Shared Section ── */

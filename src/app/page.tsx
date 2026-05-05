@@ -11,7 +11,7 @@ export default function Home() {
       <Navbar />
       <Hero />
 
-      {/* Red Band */}
+      {/* Scrolling Band */}
       <div className={styles.band}>
         <div className={styles.bandInner}>
           <span>1Life Network</span>
@@ -19,6 +19,12 @@ export default function Home() {
           <span>Creative Production</span>
           <span>Audience Exposure</span>
           <span>1Life Sessions</span>
+          {/* Duplicate for seamless scrolling */}
+          <span aria-hidden="true">1Life Network</span>
+          <span aria-hidden="true">Talent Discovery</span>
+          <span aria-hidden="true">Creative Production</span>
+          <span aria-hidden="true">Audience Exposure</span>
+          <span aria-hidden="true">1Life Sessions</span>
         </div>
       </div>
 
