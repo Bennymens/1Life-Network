@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 import styles from "./about.module.css";
 
 export default function AboutPage() {
@@ -14,25 +15,28 @@ export default function AboutPage() {
 
       <section className={styles.grid}>
         <div className={styles.textBlock}>
-          <h2>The Ecosystem Built for Impact.</h2>
+          <h2>About Us</h2>
           <p>
-            1Life Network is more than an agency. We are a culture and talent engine 
-            founded in Accra with a singular mission: to build globally competitive 
-            African creative output through systems, standards, and execution.
-          </p>
-          <p>
-            We believe that talent alone is not enough. Talent needs a system to 
-            thrive, to be discovered, and to be monetized on a global scale. We 
-            provide the infrastructure, the production quality, and the strategic 
-            distribution that African creativity deserves.
+            Welcome to 1Life Network, your one-stop destination for unparalleled entertainment experiences. We are a dynamic and innovative entertainment company that aims to bring your visions to life through our diverse range of services. With a passion for reatened have cared one to leading provider of film production, photography, music production, digital content, live performances, events, and sync opportunities.
           </p>
         </div>
-        <div className={styles.imagePlaceholder} />
+        <div className={styles.imagePlaceholder}>
+          <Image 
+            src="/images/About.jpeg"
+            alt="About 1Life Network"
+            fill
+            sizes="(max-width: 900px) 100vw, 50vw"
+            style={{ objectFit: 'cover' }}
+          />
+        </div>
       </section>
 
       <section className={styles.visionSection}>
         <div className="eyebrow">Our Vision</div>
-        <h2>Talent Needs A System.</h2>
+        <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>Redefining Entertainment.</h2>
+        <p style={{ maxWidth: '800px', margin: '0 auto 60px', fontSize: '18px', lineHeight: '1.6', color: 'var(--muted)', textAlign: 'center' }}>
+          At 1Life Network, we envision a world where entertainment knows no bounds - a realm where imagination thrives and dreams are transformed into reality. We strive to be the catalyst that ignites sparks of creativity, inspiring both our clients and audiences alike. Let's redefine entertainment together.
+        </p>
         
         <div className={styles.valuesGrid}>
           <div className={styles.valueCard}>
@@ -86,12 +90,16 @@ export default function AboutPage() {
 
       {/* CTA Section */}
       <section className={styles.ctaSection}>
-        <div className="eyebrow">The Next Step</div>
+        <div className="eyebrow">Get In Touch</div>
         <h2>Join the Ecosystem.</h2>
         <p>
           Whether you are a creative visionary looking for a system or a brand 
           looking to partner with African excellence, the engine is running.
         </p>
+        <div style={{ marginBottom: '30px', color: 'var(--muted)', fontSize: '18px', lineHeight: '1.6' }}>
+          <p>A BG241 ABAYATEYE ST GK-0736-2934</p>
+          <a href="mailto:lifeghanaa@gmail.com" style={{ color: 'var(--accent)', textDecoration: 'none' }}>lifeghanaa@gmail.com</a>
+        </div>
         <div style={{ display: 'flex', gap: '15px', justifyContent: 'center' }}>
           <a href="/submit" className="btn-main">Submit Talent</a>
           <a href="/submit" className="btn-ghost">Become a Partner</a>
