@@ -15,8 +15,7 @@ export default function Navbar() {
     <nav className={styles.navbar}>
       <div className={styles.logo}>
         <Link href="/">
-          <div className={styles.logoMain}><span>1</span>LIFE</div>
-          <div className={styles.logoSub}>NETWORK</div>
+          <img src="/images/LOGO.png" alt="1Life Network Logo" className={styles.logoImage} />
         </Link>
       </div>
 
@@ -27,7 +26,7 @@ export default function Navbar() {
         <Link href="/submit" className={pathname === "/submit" ? styles.active : ""}>Apply</Link>
         <Link href="/partners" className={pathname === "/partners" ? styles.active : ""}>Partner</Link>
         <Link href="/about" className={pathname === "/about" ? styles.active : ""}>About</Link>
-        <Link href="/submit">Contact</Link>
+        <Link href="/contact" className={pathname === "/contact" ? styles.active : ""}>Contact</Link>
       </div>
 
       <div className={styles.navActions}>
@@ -52,7 +51,7 @@ export default function Navbar() {
         <Link href="/submit" onClick={toggleMenu} className={pathname === "/submit" ? styles.active : ""}>Apply</Link>
         <Link href="/partners" onClick={toggleMenu} className={pathname === "/partners" ? styles.active : ""}>Partner</Link>
         <Link href="/about" onClick={toggleMenu} className={pathname === "/about" ? styles.active : ""}>About</Link>
-        <Link href="/submit" onClick={toggleMenu}>Contact</Link>
+        <Link href="/contact" onClick={toggleMenu} className={pathname === "/contact" ? styles.active : ""}>Contact</Link>
       </div>
     </nav>
   );

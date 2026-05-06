@@ -17,24 +17,14 @@
 }
 
 .logo a {
-  font-weight: 900;
-  letter-spacing: -0.05em;
-  font-size: 24px;
   display: flex;
-  flex-direction: column;
-  line-height: 0.9;
-  color: white;
+  align-items: center;
 }
 
-.logo span {
-  color: var(--accent);
-}
-
-.logo small {
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  margin-top: 4px;
-  color: var(--muted);
+.logoImage {
+  height: 110px;
+  width: auto;
+  object-fit: contain;
 }
 
 .tagline {

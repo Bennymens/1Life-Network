@@ -9,13 +9,13 @@ export default function SessionsPage() {
   return (
     <main className={styles.container}>
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className="eyebrow">1Life Network Hub</div>
         <h1>The Future of African <br />Entertainment.</h1>
         <p>
-          The digital headquarters for 1Life Network. Discover, watch, and 
+          The digital headquarters for 1Life Network. Discover, watch, and
           join the movement that is defining the global African creative system.
         </p>
       </section>
@@ -31,36 +31,112 @@ export default function SessionsPage() {
         </div>
 
         <div className={styles.grid}>
-          {/* Card 1: Real Channel Source */}
-          <Link href={ytChannel} target="_blank" className={styles.mediaCard}>
-            <div className={styles.thumb}><div className={styles.playBtn}>▶</div></div>
+          {/* Card 1: KiKi Celine */}
+          <Link href="https://youtu.be/33W9U5J_8uY" target="_blank" className={styles.mediaCard}>
+            <div className={styles.thumb} style={{ backgroundImage: 'url(https://img.youtube.com/vi/33W9U5J_8uY/maxresdefault.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+              <div className={styles.artistName}>KiKi Celine</div>
+              <div className={styles.playBtn}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+              </div>
+            </div>
             <div className={styles.cardBody}>
-              <div className="eyebrow" style={{ fontSize: '10px' }}>Real Channel Source</div>
-              <h4>Latest Videos</h4>
-              <p>Open the public channel and watch current uploads. Routes to the company’s real YouTube presence.</p>
+              <div className="eyebrow" style={{ fontSize: '10px' }}>1Life Sessions</div>
+              <h4>Fragile (Live Band)</h4>
+              <p>Exclusive KiKi Celine - Live Band performance with 1Life Session featuring The Band Masters.</p>
               <span className={styles.cardAction}>Watch on YouTube</span>
             </div>
           </Link>
 
-          {/* Card 2: 1Life Sessions */}
-          <Link href={ytChannel} target="_blank" className={styles.mediaCard}>
-            <div className={styles.thumb}><div className={styles.playBtn}>▶</div></div>
+          {/* Card 2: Kaesa */}
+          <Link href="https://youtu.be/HPPeGGXro10" target="_blank" className={styles.mediaCard}>
+            <div className={styles.thumb} style={{ backgroundImage: 'url(https://img.youtube.com/vi/HPPeGGXro10/maxresdefault.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+              <div className={styles.artistName}>Kaesa</div>
+              <div className={styles.playBtn}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+              </div>
+            </div>
             <div className={styles.cardBody}>
               <div className="eyebrow" style={{ fontSize: '10px' }}>1Life Sessions</div>
-              <h4>Sessions Archive</h4>
-              <p>Use this slot for the strongest performance pieces. The layout is ready for individual video embeds.</p>
-              <span className={styles.cardAction}>Browse Videos</span>
+              <h4>On God (Live Band)</h4>
+              <p>Exclusive Kaesa - On God Live Band Performance with 1Life Session featuring the Apogee Band.</p>
+              <span className={styles.cardAction}>Watch on YouTube</span>
             </div>
           </Link>
 
-          {/* Card 3: Public Proof */}
-          <Link href={ytChannel} target="_blank" className={styles.mediaCard}>
-            <div className={styles.thumb}><div className={styles.playBtn}>▶</div></div>
+          {/* Card 3: Jay Bahd */}
+          <Link href="https://youtu.be/VxR9n94COSQ" target="_blank" className={styles.mediaCard}>
+            <div className={styles.thumb} style={{ backgroundImage: 'url(https://img.youtube.com/vi/VxR9n94COSQ/maxresdefault.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+              <div className={styles.artistName}>Jay Bahd</div>
+              <div className={styles.playBtn}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+              </div>
+            </div>
             <div className={styles.cardBody}>
-              <div className="eyebrow" style={{ fontSize: '10px' }}>Public Proof</div>
-              <h4>Channel Proof Layer</h4>
-              <p>Sessions, launches, artist moments, announcements. Honest, live content source from our channel.</p>
-              <span className={styles.cardAction}>Open Channel</span>
+              <div className="eyebrow" style={{ fontSize: '10px' }}>1Life Sessions</div>
+              <h4>Yafe (Our Year) [Live Band]</h4>
+              <p>Exclusive Jay Bahd - Yafe (Our Year) Live with 1Life session featuring The Apogee Band.</p>
+              <span className={styles.cardAction}>Watch on YouTube</span>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* Featured Interviews */}
+      <section id="interviews" className={styles.section} style={{ borderTop: 'none', paddingTop: '0' }}>
+        <div className={styles.sectionHeader}>
+          <div>
+            <div className="eyebrow">The Conversation</div>
+            <h2 className={styles.sectionTitle}>Featured Interviews</h2>
+          </div>
+          <Link href={ytChannel} target="_blank" className="btn-ghost">Watch More &rarr;</Link>
+        </div>
+
+        <div className={styles.grid}>
+          {/* Card 1: Real TNT */}
+          <Link href="https://youtu.be/cQ4xu0pa5ZU" target="_blank" className={styles.mediaCard}>
+            <div className={styles.thumb} style={{ backgroundImage: 'url(https://img.youtube.com/vi/cQ4xu0pa5ZU/maxresdefault.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+              <div className={styles.artistName}>Real TNT</div>
+              <div className={styles.playBtn}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+              </div>
+            </div>
+            <div className={styles.cardBody}>
+              <div className="eyebrow" style={{ fontSize: '10px' }}>1Life Interviews</div>
+              <h4>Real TNT Interview</h4>
+              <p>Exclusive Real TNT - Interview 1Life Session. Deep diving into the artist&apos;s journey and creative process.</p>
+              <span className={styles.cardAction}>Watch on YouTube</span>
+            </div>
+          </Link>
+
+          {/* Card 2: Riycon */}
+          <Link href="https://youtu.be/EMn30nf6N8E" target="_blank" className={styles.mediaCard}>
+            <div className={styles.thumb} style={{ backgroundImage: 'url(https://img.youtube.com/vi/EMn30nf6N8E/maxresdefault.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+              <div className={styles.artistName}>Riycon</div>
+              <div className={styles.playBtn}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+              </div>
+            </div>
+            <div className={styles.cardBody}>
+              <div className="eyebrow" style={{ fontSize: '10px' }}>1Life Interviews</div>
+              <h4>Riycon Interview</h4>
+              <p>Exclusive Riycon - Interview 1Life Session. Exploring the sound and vision of one of the network&apos;s rising stars.</p>
+              <span className={styles.cardAction}>Watch on YouTube</span>
+            </div>
+          </Link>
+
+          {/* Card 3: KiKi Celine */}
+          <Link href="https://youtu.be/dPkUeOzJLbA" target="_blank" className={styles.mediaCard}>
+            <div className={styles.thumb} style={{ backgroundImage: 'url(https://img.youtube.com/vi/dPkUeOzJLbA/maxresdefault.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+              <div className={styles.artistName}>KiKi Celine</div>
+              <div className={styles.playBtn}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+              </div>
+            </div>
+            <div className={styles.cardBody}>
+              <div className="eyebrow" style={{ fontSize: '10px' }}>1Life Interviews</div>
+              <h4>KiKi Celine Interview</h4>
+              <p>Exclusive KiKi Celine - Interview. A transparent conversation about life, music, and the &quot;Fragile&quot; session.</p>
+              <span className={styles.cardAction}>Watch on YouTube</span>
             </div>
           </Link>
         </div>

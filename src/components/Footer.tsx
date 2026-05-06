@@ -9,7 +9,7 @@ export default function Footer() {
           <div className={styles.col}>
             <div className={styles.logo}>
               <Link href="/">
-                <span>1</span>LIFE<small>NETWORK</small>
+                <img src="/images/LOGO.png" alt="1Life Network Logo" className={styles.logoImage} />
               </Link>
             </div>
             <p className={styles.tagline}>
