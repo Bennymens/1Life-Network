@@ -1,0 +1,60 @@
+{
+  "sessions": [
+    {
+      "id": "sess-001",
+      "youtubeId": "33W9U5J_8uY",
+      "artist": "KiKi Celine",
+      "category": "1Life Sessions",
+      "title": "Fragile (Live Band)",
+      "description": "Exclusive KiKi Celine - Live Band performance with 1Life Session featuring The Band Masters.",
+      "createdAt": "2026-01-15T00:00:00Z"
+    },
+    {
+      "id": "sess-002",
+      "youtubeId": "HPPeGGXro10",
+      "artist": "Kaesa",
+      "category": "1Life Sessions",
+      "title": "On God (Live Band)",
+      "description": "Exclusive Kaesa - On God Live Band Performance with 1Life Session featuring the Apogee Band.",
+      "createdAt": "2026-02-10T00:00:00Z"
+    },
+    {
+      "id": "sess-003",
+      "youtubeId": "VxR9n94COSQ",
+      "artist": "Jay Bahd",
+      "category": "1Life Sessions",
+      "title": "Yafe (Our Year) [Live Band]",
+      "description": "Exclusive Jay Bahd - Yafe (Our Year) Live with 1Life session featuring The Apogee Band.",
+      "createdAt": "2026-03-05T00:00:00Z"
+    }
+  ],
+  "interviews": [
+    {
+      "id": "int-001",
+      "youtubeId": "cQ4xu0pa5ZU",
+      "artist": "Real TNT",
+      "category": "1Life Interviews",
+      "title": "Real TNT Interview",
+      "description": "Exclusive Real TNT - Interview 1Life Session. Deep diving into the artist's journey and creative process.",
+      "createdAt": "2026-01-20T00:00:00Z"
+    },
+    {
+      "id": "int-002",
+      "youtubeId": "EMn30nf6N8E",
+      "artist": "Riycon",
+      "category": "1Life Interviews",
+      "title": "Riycon Interview",
+      "description": "Exclusive Riycon - Interview 1Life Session. Exploring the sound and vision of one of the network's rising stars.",
+      "createdAt": "2026-02-15T00:00:00Z"
+    },
+    {
+      "id": "int-003",
+      "youtubeId": "dPkUeOzJLbA",
+      "artist": "KiKi Celine",
+      "category": "1Life Interviews",
+      "title": "KiKi Celine Interview",
+      "description": "Exclusive KiKi Celine - Interview. A transparent conversation about life, music, and the \"Fragile\" session.",
+      "createdAt": "2026-03-10T00:00:00Z"
+    }
+  ]
+}
