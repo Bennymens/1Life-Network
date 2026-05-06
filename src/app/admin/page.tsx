@@ -399,15 +399,16 @@ export default function AdminPage() {
                   />
                 </div>
                 <div className={styles.inputGroup}>
-                  <label htmlFor="videoCategory">Category</label>
+                  <label htmlFor="videoCategory">Destination Section</label>
                   <select
                     id="videoCategory"
                     value={formCategory}
                     onChange={(e) => setFormCategory(e.target.value)}
                   >
-                    <option value="1Life Sessions">1Life Sessions</option>
-                    <option value="1Life Interviews">1Life Interviews</option>
+                    <option value="1Life Sessions">Watch &rarr; Sessions</option>
+                    <option value="1Life Interviews">Watch &rarr; Interviews</option>
                   </select>
+                  <span className={styles.hint}>Controls which section of the Watch page this appears in.</span>
                 </div>
               </div>
               <div className={styles.inputGroup}>
@@ -432,15 +433,37 @@ export default function AdminPage() {
                 />
               </div>
 
-              {/* Preview */}
+              {/* Real-time Card Preview */}
               {formYoutubeUrl && (
                 <div className={styles.preview}>
-                  <p className={styles.previewLabel}>Thumbnail Preview</p>
-                  <img
-                    src={`https://img.youtube.com/vi/${extractYoutubeId(formYoutubeUrl)}/mqdefault.jpg`}
-                    alt="Preview"
-                    className={styles.previewImg}
-                  />
+                  <div className={styles.previewLabel}>
+                    Live Preview
+                    <span>Matches Site View</span>
+                  </div>
+                  
+                  <div className={styles.cardPreview}>
+                    <div 
+                      className={styles.cardThumb} 
+                      style={{ 
+                        backgroundImage: `url(https://img.youtube.com/vi/${extractYoutubeId(formYoutubeUrl)}/maxresdefault.jpg)` 
+                      }}
+                    >
+                      {formArtist && <div className={styles.cardArtist}>{formArtist}</div>}
+                      <div className={styles.cardPlayBtn}>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className={styles.cardBody}>
+                      <div className={styles.cardCategory}>{formCategory}</div>
+                      <h4 className={styles.cardTitle}>{formTitle || "Untitled Session"}</h4>
+                      <p className={styles.cardDesc}>
+                        {formDescription || "Description will appear here..."}
+                      </p>
+                      <div className={styles.cardAction}>Watch on YouTube</div>
+                    </div>
+                  </div>
                 </div>
               )}
 
