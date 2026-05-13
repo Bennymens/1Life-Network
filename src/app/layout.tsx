@@ -16,6 +16,9 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "1Life Network — Talent Needs A System.",
   description: "Accra-based culture and talent engine building globally competitive African creative output through systems, standards, and execution.",
+  icons: {
+    icon: "/images/favicon.png",
+  },
 };
 
 export default function RootLayout({

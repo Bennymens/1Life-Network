@@ -22,11 +22,13 @@ export default function AboutPage() {
         </div>
         <div className={styles.imagePlaceholder}>
           <Image 
-            src="/images/About.jpeg"
+            src="/images/IMG_3543.JPG"
             alt="About 1Life Network"
             fill
             sizes="(max-width: 900px) 100vw, 50vw"
             style={{ objectFit: 'cover' }}
+            quality={100}
+            unoptimized={true}
           />
         </div>
       </section>

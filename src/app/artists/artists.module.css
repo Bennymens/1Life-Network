@@ -13,9 +13,9 @@
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background:
-    linear-gradient(90deg, rgba(0,0,0,.86) 0%, rgba(0,0,0,.54) 44%, rgba(0,0,0,.35) 100%),
-    linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.48)),
-    url('/images/hero.png') center/cover no-repeat;
+    linear-gradient(90deg, rgba(0,0,0,.65) 0%, rgba(0,0,0,.40) 44%, rgba(0,0,0,.25) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.35)),
+    url('/images/IMG_3534 (1).JPG') center/cover no-repeat;
   margin: 0 16px 0;
   border-radius: 30px;
 }
@@ -25,7 +25,7 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(7,9,13,.08), rgba(7,9,13,.68)),
+    linear-gradient(180deg, rgba(7,9,13,.05), rgba(7,9,13,.45)),
     radial-gradient(circle at left 25%, rgba(211,13,20,.18), transparent 28%);
   pointer-events: none;
 }

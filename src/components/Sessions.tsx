@@ -6,10 +6,10 @@ export default function Sessions() {
   const formats = [
     { title: "Live Performances", type: "Visual Album", image: "/images/live.jpeg" },
     { title: "DJ Live Sessions", type: "Mix Series", image: "/images/Dj.jpeg" },
-    { title: "Acoustic Sessions", type: "Stripped Down" },
+    { title: "Acoustic Sessions", type: "Stripped Down", image: "/images/IMG_3525.JPG" },
     { title: "Band Sessions", type: "Full Ensemble", image: "/images/band.jpeg" },
-    { title: "Freestyle / Cypher", type: "Lyrical Focus" },
-    { title: "Special Collabs", type: "Cross-Culture" },
+    { title: "Freestyle / Cypher", type: "Lyrical Focus", image: "/images/IMG_3528.JPG" },
+    { title: "Special Collabs", type: "Cross-Culture", image: "/images/IMG_3529 (1).JPG" },
   ];
 
   return (
@@ -36,6 +36,8 @@ export default function Sessions() {
                     fill
                     sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"
                     style={{ objectFit: 'cover' }}
+                    quality={100}
+                    unoptimized={true}
                   />
                 )}
               </div>

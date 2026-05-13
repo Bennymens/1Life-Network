@@ -84,11 +84,13 @@ export default function Hero() {
 
       <div className={styles.imageSection} ref={imageSectionRef} style={{ transform: "translateY(50px)" }}>
         <Image 
-          src="/images/hero.png" 
+          src="/images/IMG_3526 (1).JPG" 
           alt="1Life Network Cinematic View" 
           fill 
           className={styles.heroImage}
           priority
+          quality={100}
+          unoptimized={true}
         />
         <div className={styles.overlay} />
         <div className={styles.heroNote}>
