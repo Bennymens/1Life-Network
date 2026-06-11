@@ -1,20 +1,49 @@
 /* ── Submit Page ── */
 .main {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top, rgba(211, 13, 20, 0.06), transparent 22%),
-    linear-gradient(180deg, #080808 0%, #050505 100%);
+  position: relative;
+  background: #000000;
   color: #fff;
   line-height: 1.55;
+  overflow-x: hidden;
+}
+
+/* ── Cinematic Background elements ── */
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.radialGlow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1400px;
+  height: 700px;
+  background: radial-gradient(circle at top, rgba(211, 13, 20, 0.12), transparent 70%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .container {
+  position: relative;
   width: min(1200px, calc(100% - 32px));
   margin: 0 auto;
+  z-index: 2;
 }
 
 .section {
+  position: relative;
   padding: 100px 0;
+  z-index: 2;
 }
 
 /* ── Eyebrow ── */
@@ -25,15 +54,16 @@
   font-size: 11px;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--accent);
+  margin-bottom: 12px;
 }
 
 .eyebrow::before {
   content: '';
   display: block;
-  width: 36px;
+  width: 24px;
   height: 1px;
-  background: rgba(211, 13, 20, 0.34);
+  background: rgba(211, 13, 20, 0.5);
 }
 
 /* ── Section Head ── */
@@ -42,22 +72,35 @@
   margin-bottom: 34px;
 }
 
-.sectionHead h1 {
+.heroTitle {
   margin: 12px 0 16px;
-  font-family: var(--font-cormorant), serif;
-  font-size: clamp(2.8rem, 6vw, 5.8rem);
-  line-height: 0.9;
-  font-weight: 600;
+  font-size: clamp(3.2rem, 7.5vw, 6.8rem);
+  line-height: 0.92;
+  font-weight: 900;
   letter-spacing: -0.05em;
+  text-transform: uppercase;
 }
 
-.sectionHead h2 {
+.outlineText {
+  -webkit-text-stroke: 1.5px var(--accent);
+  -webkit-text-fill-color: transparent;
+}
+
+.heroLead {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 720px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.sectionHeading {
   margin: 12px 0 16px;
-  font-family: var(--font-cormorant), serif;
-  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
   line-height: 0.98;
-  font-weight: 600;
-  letter-spacing: -0.05em;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
 }
 
 .sectionHead p {
@@ -69,8 +112,10 @@
 
 /* ── Hero ── */
 .hero {
-  padding: 84px 0 64px;
+  position: relative;
+  padding: 120px 0 64px;
   margin-top: 60px;
+  z-index: 2;
 }
 
 .heroGrid {
@@ -82,12 +127,29 @@
 
 /* ── Card ── */
 .card {
+  position: relative;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.01));
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
   padding: 28px;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
   transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.cardBadge {
+  position: absolute;
+  top: -12px;
+  right: 28px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 10px rgba(211, 13, 20, 0.3);
 }
 
 .card:hover {
@@ -151,6 +213,13 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 22px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 22px;
+  align-items: start;
 }
 
 /* ── Requirements ── */
@@ -276,10 +345,259 @@
   color: #fff;
 }
 
+/* ── Hero Right Stack (two cards stacked) ── */
+.heroRightStack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-self: start;
+}
+
+/* ── Hero Image Card ── */
+.heroImageCard {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.heroImageCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.4);
+}
+
+.heroCardImage {
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.heroImageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);
+  z-index: 2;
+}
+
+.heroImageLabel {
+  position: absolute;
+  bottom: 16px;
+  left: 18px;
+  z-index: 3;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ── 1Live Sessions Section ── */
+.sessionsSection {
+  position: relative;
+  z-index: 2;
+  background: #000;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 80px 0;
+}
+
+.sessionsInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: end;
+  margin-bottom: 50px;
+}
+
+.sessionsLeft {}
+
+.sessionsTitle {
+  margin: 8px 0 0;
+  font-size: clamp(2.6rem, 6vw, 5.2rem);
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.sessionsRight {}
+
+.sessionsDesc {
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+/* ── Format Cards Grid ── */
+.sessionsFormats {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.formatCard {
+  background: rgba(211, 13, 20, 0.04);
+  padding: 22px 18px;
+  transition: background 0.25s ease;
+}
+
+.formatCard:hover {
+  background: rgba(211, 13, 20, 0.1);
+}
+
+.formatCard h4 {
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 10px;
+  color: #fff;
+}
+
+.formatCard p {
+  font-size: 12px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+.sessionsFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.sessionsFooter p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 520px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.btnWatch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 26px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 24px rgba(211, 13, 20, 0.3);
+  flex-shrink: 0;
+}
+
+.btnWatch:hover {
+  background: #e01520;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(211, 13, 20, 0.4);
+}
+
+/* ── Pro Card (Services / Partners) ── */
+.proCard {
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 24px;
+  padding: 36px 32px;
+  transition: border-color 0.3s ease;
+}
+
+.proCard:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.proCardEyebrow {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.proCardTitle {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0 0 12px;
+}
+
+.proCardSub {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.6;
+  margin: 0 0 28px;
+}
+
+.proList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.proItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  gap: 16px;
+  transition: padding-left 0.2s ease;
+}
+
+.proItem:hover {
+  padding-left: 4px;
+}
+
+.proItem span:first-child {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.proDetail {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.38);
+  text-align: right;
+  flex-shrink: 0;
+}
+
 /* ── Responsive ── */
 @media (max-width: 980px) {
-  .heroGrid, .grid, .stats {
+  .heroGrid, .grid, .formGrid, .stats {
     grid-template-columns: 1fr;
+  }
+
+  .sessionsInner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 34px;
+  }
+
+  .sessionsFormats {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -290,4 +608,15 @@
   .sectionHead h1 {
     font-size: clamp(2.8rem, 16vw, 4.8rem);
   }
+  .sessionsFormats {
+    grid-template-columns: 1fr;
+  }
+  .sessionsFooter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .heroImageCard {
+    height: 200px;
+  }
 }
+

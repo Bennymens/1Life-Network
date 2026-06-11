@@ -1,10 +1,9 @@
-import { cookies } from "next/headers";
 import fs from "fs";
 import path from "path";
 import type { VideosData, Video } from "@/data/types";
+import { isAuthenticated } from "@/lib/auth";
 
 const DATA_PATH = path.join(process.cwd(), "src", "data", "videos.json");
-const SESSION_TOKEN = "1life-admin-session";
 
 function readVideos(): VideosData {
   const raw = fs.readFileSync(DATA_PATH, "utf-8");
@@ -13,12 +12,6 @@ function readVideos(): VideosData {
 
 function writeVideos(data: VideosData) {
   fs.writeFileSync(DATA_PATH, JSON.stringify(data, null, 2), "utf-8");
-}
-
-async function isAuthenticated(): Promise<boolean> {
-  const cookieStore = await cookies();
-  const token = cookieStore.get(SESSION_TOKEN);
-  return !!token?.value;
 }
 
 // GET — return all videos

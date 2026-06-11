@@ -103,8 +103,8 @@ export default function AboutPage() {
           <a href="mailto:lifeghanaa@gmail.com" style={{ color: 'var(--accent)', textDecoration: 'none' }}>lifeghanaa@gmail.com</a>
         </div>
         <div style={{ display: 'flex', gap: '15px', justifyContent: 'center' }}>
-          <a href="/submit" className="btn-main">Submit Talent</a>
-          <a href="/submit" className="btn-ghost">Become a Partner</a>
+          <a href="/submit" className="btn-main">Join The Network</a>
+          <a href="/partners" className="btn-ghost">Become a Partner</a>
         </div>
       </section>
 

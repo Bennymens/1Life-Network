@@ -128,6 +128,94 @@
   margin-top: 12px;
 }
 
+/* ── Form Section Headings ── */
+.sectionTitle {
+  grid-column: 1 / -1;
+  margin-top: 32px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 8px;
+}
+
+.sectionEyebrow {
+  display: block;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.sectionHeading {
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #fff;
+  margin: 0;
+}
+
+/* ── Social Input with @ Prefix ── */
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.inputPrefix {
+  position: absolute;
+  left: 18px;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 15px;
+  pointer-events: none;
+  font-family: inherit;
+}
+
+.inputWithPrefix {
+  padding-left: 36px !important;
+}
+
+/* ── Custom Premium File Input ── */
+.fileInput {
+  width: 100%;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  background: #080808;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 12px;
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.fileInput:hover {
+  border-color: rgba(211, 13, 20, 0.4);
+  background: #0c0c0c;
+}
+
+.fileInput::file-selector-button {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin-right: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.fileInput::file-selector-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .row {

@@ -44,7 +44,7 @@ export default function Footer() {
           <div className={styles.col}>
             <h4>Get Involved</h4>
             <ul>
-              <li><Link href="/submit">Submit Talent</Link></li>
+              <li><Link href="/submit">Join The Network</Link></li>
               <li><Link href="/partners">Become a Partner</Link></li>
               <li><Link href="/contact">Media Inquiries</Link></li>
               <li><Link href="/contact">Contact Support</Link></li>

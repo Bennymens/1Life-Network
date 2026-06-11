@@ -61,7 +61,7 @@ export default function Hero() {
           1Life Network is a media platform built to discover talent, shape the presentation, and push the work into real visibility.
         </p>
         <div className={styles.heroActions}>
-          <Link href="/submit" className={styles.btnPrimary}>Submit Your Music</Link>
+          <Link href="/submit" className={styles.btnPrimary}>Join The Network</Link>
           <Link href="/sessions" className={styles.btnSecondary}>See The Work</Link>
         </div>
         <div className={styles.dot} ref={dotRef} style={{ transform: "scale(0)" }} />

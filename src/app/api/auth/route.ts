@@ -1,16 +1,12 @@
 import { cookies } from "next/headers";
-
-const ADMIN_USER = process.env.ADMIN_USER || "admin";
-const ADMIN_PASS = process.env.ADMIN_PASS || "1life2026";
-const SESSION_TOKEN = "1life-admin-session";
+import { generateToken, verifyToken, ADMIN_USER, ADMIN_PASS, SESSION_TOKEN } from "@/lib/auth";
 
 export async function POST(request: Request) {
   try {
     const { username, password } = await request.json();
 
     if (username === ADMIN_USER && password === ADMIN_PASS) {
-      // Create a simple token (timestamp + hash-like value)
-      const token = Buffer.from(`${ADMIN_USER}:${Date.now()}`).toString("base64");
+      const token = generateToken(ADMIN_USER);
 
       const cookieStore = await cookies();
       cookieStore.set(SESSION_TOKEN, token, {
@@ -35,7 +31,7 @@ export async function GET() {
   const cookieStore = await cookies();
   const token = cookieStore.get(SESSION_TOKEN);
 
-  if (token?.value) {
+  if (token?.value && verifyToken(token.value)) {
     return Response.json({ authenticated: true });
   }
 
@@ -48,3 +44,4 @@ export async function DELETE() {
   cookieStore.delete(SESSION_TOKEN);
   return Response.json({ success: true });
 }
+
